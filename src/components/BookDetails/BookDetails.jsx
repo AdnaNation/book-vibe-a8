@@ -8,7 +8,7 @@ const BookDetails = () => {
 
   return (
     <div className="hero  bg-base-200">
-      <div className="hero-content flex-col lg:flex-row">
+      <div className="hero-content flex-col lg:flex-row gap-12">
         <img className="h-[500px] w-[400px]" src={book.image} />
         <div className="space-y-4">
           <h1 className="text-5xl font-bold">{book.bookName}</h1>
@@ -16,13 +16,15 @@ const BookDetails = () => {
             By: {book.author}
           </p>
           <hr />
-          <p className="text-[#131313CC] font-semibold">{book.category}</p>
+          <p className="text-2xl text-[#131313CC] font-semibold">
+            {book.category}
+          </p>
           <hr />
-          <p>
-            <span>Review:</span> {book.review}
+          <p className="text-[#131313CC] font-semibold">
+            <span className="text-black font-bold">Review:</span> {book.review}
           </p>
           <p>
-            <span>Tag </span>
+            <span className="text-black font-bold">Tag </span>
             {book.tags.map((tag) => (
               <a
                 className="text-[#23BE0A] bg-[#23BE0A0D] p-1 rounded-md mr-3"
