@@ -1,23 +1,22 @@
-import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { CiStar } from "react-icons/ci";
-const Books = () => {
-  const [books, setBooks] = useState([]);
-  useEffect(() => {
-    fetch("../books.json")
-      .then((res) => res.json())
-      .then((data) => setBooks(data));
-  }, []);
+import { Link } from "react-router-dom";
+const Books = ({ books }) => {
   return (
-    <div>
-      <h2>Books</h2>
+    <div className="mt-5">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-5">Books</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {books.map((book) => (
-          <div key={book.bookId} className="card  bg-base-100 shadow-xl">
-            <figure className="px-10 pt-10">
+          <Link
+            to={`/book/${book.bookId}`}
+            key={book.bookId}
+            className="card  bg-base-100 shadow-xl p-5 border hover:scale-105 hover:border-secondary"
+          >
+            <figure className="px-5 py-5 bg-[#F3F3F3]">
               <img
-                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                alt="Shoes"
-                className="rounded-xl"
+                src={book.image}
+                alt={book.bookName}
+                className="rounded-sm h-52 w-46"
               />
             </figure>
             <div className="card-body  ">
@@ -41,11 +40,13 @@ const Books = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
   );
 };
-
+Books.propTypes = {
+  books: PropTypes.array,
+};
 export default Books;
