@@ -21,10 +21,10 @@ const Books = ({ books }) => {
             </figure>
             <div className="card-body  ">
               <div className="flex gap-4">
-                {book.tags.map((tag) => (
+                {book.tags.map((tag, idx) => (
                   <a
                     className="text-[#23BE0A] bg-[#23BE0A0D] p-1 rounded-md"
-                    key={tag.idx}
+                    key={idx}
                   >
                     {tag}
                   </a>
