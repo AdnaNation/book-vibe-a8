@@ -8,7 +8,7 @@
     "totalPages": 192,
     "rating": 4.5,
     "category": "Science Fiction",
-    "tags": ["Humor", "Satire", "Space Travel"],
+    "tags": ["Humor", "Space Travel"],
     "publisher": "Pan Books",
     "yearOfPublishing": 1979
   },
@@ -21,7 +21,7 @@
     "totalPages": 224,
     "rating": 4.8,
     "category": "Romance",
-    "tags": ["Classic Literature", "Social Commentary", "Coming-of-Age"],
+    "tags": ["Classic Literature", "Social Commentary"],
     "publisher": "Penguin Classics",
     "yearOfPublishing": 1813
   },
@@ -34,7 +34,7 @@
     "totalPages": 324,
     "rating": 5,
     "category": "Fiction",
-    "tags": ["Coming-of-Age", "Social Justice", "Historical Fiction"],
+    "tags": ["Social Justice", "Historical Fiction"],
     "publisher": "J.B. Lippincott & Co.",
     "yearOfPublishing": 1960
   },
@@ -47,7 +47,7 @@
     "totalPages": 863,
     "rating": 4.2,
     "category": "Science Fiction",
-    "tags": ["Sci-Fi Adventure", "Worldbuilding", "Political Intrigue"],
+    "tags": ["Sci-Fi Adventure", "Political Intrigue"],
     "publisher": "Chilton Books",
     "yearOfPublishing": 1965
   },
@@ -60,7 +60,7 @@
     "totalPages": 1136,
     "rating": 4.9,
     "category": "Fantasy",
-    "tags": ["High Fantasy", "Adventure", "Coming-of-Age"],
+    "tags": ["High Fantasy", "Adventure"],
     "publisher": "Allen & Unwin",
     "yearOfPublishing": 1954
   },
@@ -73,7 +73,7 @@
     "totalPages": 352,
     "rating": 4.7,
     "category": "Magical Realism",
-    "tags": ["Historical Fiction", "Family Saga", "Latin American Literature"],
+    "tags": ["Historical Fiction", "Latin American Literature"],
     "publisher": "Editorial Sudamericana",
     "yearOfPublishing": 1967
   }
