@@ -1,0 +1,80 @@
+[
+  {
+    "bookId": 1,
+    "bookName": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "image": "hitchhikers_guide.jpg",
+    "review": "A hilarious and insightful science fiction comedy that will leave you wanting more.",
+    "totalPages": 192,
+    "rating": 4.5,
+    "category": "Science Fiction",
+    "tags": ["Humor", "Satire", "Space Travel"],
+    "publisher": "Pan Books",
+    "yearOfPublishing": 1979
+  },
+  {
+    "bookId": 2,
+    "bookName": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "image": "pride_and_prejudice.jpg",
+    "review": "A timeless classic of witty social commentary and the complexities of love and relationships.",
+    "totalPages": 224,
+    "rating": 4.8,
+    "category": "Romance",
+    "tags": ["Classic Literature", "Social Commentary", "Coming-of-Age"],
+    "publisher": "Penguin Classics",
+    "yearOfPublishing": 1813
+  },
+  {
+    "bookId": 3,
+    "bookName": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "image": "to_kill_a_mockingbird.jpg",
+    "review": "A powerful and moving story about racial injustice and the importance of empathy.",
+    "totalPages": 324,
+    "rating": 5,
+    "category": "Fiction",
+    "tags": ["Coming-of-Age", "Social Justice", "Historical Fiction"],
+    "publisher": "J.B. Lippincott & Co.",
+    "yearOfPublishing": 1960
+  },
+  {
+    "bookId": 4,
+    "bookName": "Dune",
+    "author": "Frank Herbert",
+    "image": "dune.jpg",
+    "review": "A complex and epic science fiction saga exploring themes of ecology, politics, and religion.",
+    "totalPages": 863,
+    "rating": 4.2,
+    "category": "Science Fiction",
+    "tags": ["Sci-Fi Adventure", "Worldbuilding", "Political Intrigue"],
+    "publisher": "Chilton Books",
+    "yearOfPublishing": 1965
+  },
+  {
+    "bookId": 5,
+    "bookName": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "image": "lord_of_the_rings.jpg",
+    "review": "A sprawling fantasy epic that has captivated readers for generations.",
+    "totalPages": 1136,
+    "rating": 4.9,
+    "category": "Fantasy",
+    "tags": ["High Fantasy", "Adventure", "Coming-of-Age"],
+    "publisher": "Allen & Unwin",
+    "yearOfPublishing": 1954
+  },
+  {
+    "bookId": 6,
+    "bookName": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "image": "one_hundred_years.jpg",
+    "review": "A magical realist masterpiece exploring the rise and fall of a family through generations.",
+    "totalPages": 352,
+    "rating": 4.7,
+    "category": "Magical Realism",
+    "tags": ["Historical Fiction", "Family Saga", "Latin American Literature"],
+    "publisher": "Editorial Sudamericana",
+    "yearOfPublishing": 1967
+  }
+]
