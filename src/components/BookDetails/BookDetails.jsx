@@ -10,11 +10,13 @@ const BookDetails = () => {
     <div className="hero  bg-base-200">
       <div className="hero-content flex-col lg:flex-row">
         <img className="h-[500px] w-[400px]" src={book.image} />
-        <div>
+        <div className="space-y-4">
           <h1 className="text-5xl font-bold">{book.bookName}</h1>
-          <p className="py-6">By: {book.author}</p>
+          <p className="py-6 text-[#131313CC] font-semibold">
+            By: {book.author}
+          </p>
           <hr />
-          <p>{book.category}</p>
+          <p className="text-[#131313CC] font-semibold">{book.category}</p>
           <hr />
           <p>
             <span>Review:</span> {book.review}
@@ -32,25 +34,43 @@ const BookDetails = () => {
           </p>
           <hr />
 
-          <div className="w-[300px]">
-            <p className=" flex">
-              <span className="flex-grow">Number of Pages: </span>
-              <span className="text-left">{book.totalPages}</span>
-            </p>
-            <p className=" flex">
-              <span className="flex-grow">Publisher: </span>{" "}
-              <span>{book.publisher}</span>
-            </p>
-            <p className=" flex">
-              <span className="flex-grow">Year of Publishing: </span>
-              <span>{book.yearOfPublishing}</span>
-            </p>
-            <p className=" flex">
-              <span className="flex-grow">Rating: </span>{" "}
-              <span>{book.rating}</span>
-            </p>
+          <div className="overflow-x-auto">
+            <table className="table w-96">
+              {/* head */}
+              <thead></thead>
+              <tbody>
+                {/* row 1 */}
+                <tr>
+                  <td>Number of Pages:</td>
+                  <td className="text-black font-semibold">
+                    {book.totalPages}
+                  </td>
+                </tr>
+                {/* row 2 */}
+                <tr>
+                  <td>Publisher:</td>
+                  <td className="text-black font-semibold">{book.publisher}</td>
+                </tr>
+                {/* row 3 */}
+                <tr>
+                  <td>Year of Publishing:</td>
+                  <td className="text-black font-semibold">
+                    {book.yearOfPublishing}
+                  </td>
+                </tr>
+                {/* row 4 */}
+                <tr>
+                  <td>Rating:</td>
+                  <td className="text-black font-semibold">{book.rating}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <button className="btn btn-primary">Get Started</button>
+
+          <div className="flex justify-center md:justify-start">
+            <button className="btn border-[#1313134D] mr-4">Read</button>
+            <button className="btn bg-[#50B1C9] text-white">Wishlist</button>
+          </div>
         </div>
       </div>
     </div>
