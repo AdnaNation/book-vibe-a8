@@ -1,25 +1,17 @@
-import { useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { saveReadBook } from "../../utility/localstorage";
 
 const BookDetails = () => {
   const books = useLoaderData();
   const { bookId } = useParams();
-  const [btnClick, setBtnClick] = useState(0);
 
   const idInt = parseInt(bookId);
   const book = books.find((book) => book.bookId === idInt);
 
   const handleRead = () => {
     saveReadBook(idInt);
-    setBtnClick(1);
-    if (btnClick > 0) {
-      toast("The book is already listed");
-    } else {
-      toast("You have read the book");
-    }
   };
 
   return (
@@ -92,7 +84,14 @@ const BookDetails = () => {
             >
               Read
             </button>
-            <button className="btn bg-[#50B1C9] text-white">Wishlist</button>
+            <button className="btn bg-[#50B1C9] text-white mr-4">
+              Wishlist
+            </button>
+            <Link to="/">
+              <button className="btn border-[#1313134D]">
+                Go Back to Home
+              </button>
+            </Link>
           </div>
         </div>
       </div>
