@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { Bar, BarChart, Line, LineChart } from "recharts";
 import { getStoredReadBook } from "../../utility/localstorage";
 const ReadBooks = () => {
   const books = useLoaderData();
 
   const [displayBooks, setDisplayBooks] = useState([]);
-  console.log(books);
 
   useEffect(() => {
     const storedBookIds = getStoredReadBook();
@@ -23,7 +21,7 @@ const ReadBooks = () => {
       setDisplayBooks(booksListed);
     }
   }, [books]);
-  console.log(displayBooks);
+
   return (
     <div>
       {displayBooks.map((book) => (
@@ -60,14 +58,6 @@ const ReadBooks = () => {
           </div>
         </div>
       ))}
-      <div>
-        <BarChart width={600} height={600} data={displayBooks}>
-          <Bar dataKey="totalPages"></Bar>
-        </BarChart>
-        <LineChart width={500} height={400} data={displayBooks}>
-          <Line dataKey="totalPages"></Line>
-        </LineChart>
-      </div>
     </div>
   );
 };
