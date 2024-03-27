@@ -13,6 +13,7 @@ const ListedBooks = () => {
       const booksListed = [];
       for (const id of storedBookIds) {
         const book = books.find((book) => book.bookId === id);
+        console.log(book);
         if (book) {
           booksListed.push(book);
         }
@@ -23,7 +24,9 @@ const ListedBooks = () => {
   }, [books]);
   return (
     <div>
-      <h1>Nothing is listed yet</h1>
+      {books.map((book) => (
+        <h2 key={book.bookId}>{book.bookName}</h2>
+      ))}
     </div>
   );
 };
