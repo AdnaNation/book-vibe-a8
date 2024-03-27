@@ -47,33 +47,62 @@ const ReadPages = () => {
   };
 
   return (
-    <div className="w-[425px] md:w-full">
-      <BarChart
-        className="w-full"
-        width={1500}
-        height={700}
-        data={displayBooks}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="bookName" />
-        <YAxis dataKey="totalPages" />
-        <Bar
-          dataKey="totalPages"
-          fill="#8884d8"
-          shape={<TriangleBar />}
-          label={{ position: "top" }}
+    <div className="mt-3">
+      <div className="  hidden md:block">
+        <BarChart
+          className="w-screen  bg-slate-200 mx-auto"
+          width={800}
+          height={700}
+          data={displayBooks}
+          margin={{
+            top: 20,
+            right: 20,
+            left: 0,
+            bottom: 5,
+          }}
         >
-          {displayBooks.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-          ))}
-        </Bar>
-      </BarChart>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="bookShort" />
+          <YAxis dataKey="totalPages" />
+          <Bar
+            dataKey="totalPages"
+            fill="#8884d8"
+            shape={<TriangleBar />}
+            label={{ position: "top" }}
+          >
+            {displayBooks.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+            ))}
+          </Bar>
+        </BarChart>
+      </div>
+      <div className="  bg-slate-200 md:hidden">
+        <BarChart
+          width={425}
+          height={700}
+          data={displayBooks}
+          margin={{
+            top: 20,
+            right: 0,
+            left: 0,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="bookShort" />
+          <YAxis dataKey="totalPages" />
+          <Bar
+            dataKey="totalPages"
+            fill="#8884d8"
+            shape={<TriangleBar />}
+            label={{ position: "top" }}
+          >
+            {displayBooks.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+            ))}
+          </Bar>
+        </BarChart>
+      </div>
     </div>
   );
 };

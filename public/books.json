@@ -2,6 +2,7 @@
   {
     "bookId": 1,
     "bookName": "The Hitchhikers Guide to the Galaxy",
+    "bookShort": "The Hit",
     "author": "Douglas Adams",
     "image": "https://i.ibb.co/0B5fV7m/book1.webp",
     "review": "A hilarious and insightful science fiction comedy that will leave you wanting more.",
@@ -15,6 +16,7 @@
   {
     "bookId": 2,
     "bookName": "Pride and Prejudice",
+    "bookShort": "Pride",
     "author": "Jane Austen",
     "image": "https://i.ibb.co/Dg8xht7/book2.jpg",
     "review": "A timeless classic of witty social commentary and the complexities of love and relationships.",
@@ -28,6 +30,7 @@
   {
     "bookId": 3,
     "bookName": "To Kill a Mockingbird",
+    "bookShort": "To Kill",
     "author": "Harper Lee",
     "image": "https://i.ibb.co/3sfMcwg/book3.webp",
     "review": "A powerful and moving story about racial injustice and the importance of empathy.",
@@ -41,6 +44,7 @@
   {
     "bookId": 4,
     "bookName": "Dune",
+    "bookShort": "Dune",
     "author": "Frank Herbert",
     "image": "https://i.ibb.co/R6K4MDM/book4.jpg",
     "review": "A complex and epic science fiction saga exploring themes of ecology, politics, and religion.",
@@ -54,6 +58,7 @@
   {
     "bookId": 5,
     "bookName": "The Lord of the Rings",
+    "bookShort": "The Lord",
     "author": "J.R.R. Tolkien",
     "image": "https://i.ibb.co/PTBsPnk/book5.jpg",
     "review": "A sprawling fantasy epic that has captivated readers for generations.",
@@ -67,6 +72,7 @@
   {
     "bookId": 6,
     "bookName": "One Hundred Years of Solitude",
+    "bookShort": "One Hundred",
     "author": "Gabriel García Márquez",
     "image": "https://i.ibb.co/Gp87Ryx/book6.jpg",
     "review": "A magical realist masterpiece exploring the rise and fall of a family through generations.",
