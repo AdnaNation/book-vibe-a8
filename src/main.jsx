@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AboutUs from "./components/AboutUs/AboutUs";
 import BookDetails from "./components/BookDetails/BookDetails";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Home from "./components/Home/Home";
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
           {
             path: "wishlist",
             element: <WishList></WishList>,
+            loader: () => fetch("../books.json"),
           },
         ],
       },
@@ -48,6 +50,10 @@ const router = createBrowserRouter([
         path: "/pages",
         element: <ReadPages></ReadPages>,
         loader: () => fetch("../books.json"),
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>,
       },
     ],
   },

@@ -39,6 +39,30 @@ const Navbar = () => {
           Pages to Read
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#23BE0A] && border && font-extrabold"
+              : "font-bold"
+          }
+          to="/blogs"
+        >
+          Blogs
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#23BE0A] && border && font-extrabold"
+              : "font-bold"
+          }
+          to="/about"
+        >
+          About Us
+        </NavLink>
+      </li>
     </>
   );
   return (
@@ -68,7 +92,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl md:text-3xl font-extrabold ">
+        <a className="btn btn-ghost text-xl md:text-3xl font-extrabold px-0">
           Book Vibe
         </a>
       </div>

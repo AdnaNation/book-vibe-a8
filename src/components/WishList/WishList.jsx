@@ -1,7 +1,132 @@
+import { useEffect, useState } from "react";
+import { CiCalendar } from "react-icons/ci";
+import { FaUserFriends } from "react-icons/fa";
+import { MdOutlineContactPage } from "react-icons/md";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { useLoaderData } from "react-router-dom";
+import {
+  getStoredReadBook,
+  getStoredWishlist,
+} from "../../utility/localstorage";
+
 const WishList = () => {
+  const books = useLoaderData();
+  const [displayWishlist, setDisplayWishlist] = useState([]);
+  const [listedBooks, setListedBooks] = useState([]);
+
+  const handleFilter = (filter) => {
+    if (filter === "all") {
+      setDisplayWishlist(listedBooks);
+    } else if (filter === "science fiction") {
+      const fictionBooks = listedBooks.filter(
+        (book) => book.category === "Science Fiction"
+      );
+      setDisplayWishlist(fictionBooks);
+    } else if (filter === "romance") {
+      const romanceBooks = listedBooks.filter(
+        (book) => book.category === "Romance"
+      );
+      setDisplayWishlist(romanceBooks);
+    }
+  };
+
+  const wishlistIds = getStoredWishlist();
+  const readBookIds = getStoredReadBook();
+
+  const newIds = wishlistIds.filter((id) => !readBookIds.includes(id));
+
+  useEffect(() => {
+    const storedWishlistIds = newIds;
+    if (books.length > 0) {
+      const wishListed = [];
+      for (const id of storedWishlistIds) {
+        const book = books.find((book) => book.bookId === id);
+        if (book) {
+          wishListed.push(book);
+        }
+      }
+      setDisplayWishlist(wishListed);
+      setListedBooks(wishListed);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [books]);
+
   return (
     <div>
-      <h2>Wishlist books</h2>
+      <div className="flex justify-center md:justify-end">
+        <details className="dropdown">
+          <summary className=" btn  text-white bg-[#23BE0A]">
+            Sort By
+            <RiArrowDropDownLine className="text-2xl"></RiArrowDropDownLine>
+          </summary>
+          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+            <li onClick={() => handleFilter("all")}>
+              <a>All</a>
+            </li>
+            <li onClick={() => handleFilter("science fiction")}>
+              <a>Science Fiction</a>
+            </li>
+            <li onClick={() => handleFilter("romance")}>
+              <a>Romance</a>
+            </li>
+          </ul>
+        </details>
+      </div>
+      {displayWishlist.map((book) => (
+        <div key={book.bookId} className="hero  bg-base-200 mt-2 rounded-xl">
+          <div className="hero-content flex-col lg:flex-row gap-12 md:w-[900px]">
+            <img className="h-[200px] w-[150px]" src={book.image} />
+            <div className="flex-grow space-y-2">
+              <h1 className="text-3xl font-bold">{book.bookName}</h1>
+              <p className=" text-[#131313CC] font-semibold">
+                By: {book.author}
+              </p>
+
+              <div className="flex">
+                <p>
+                  <span className="text-black font-bold">Tag </span>
+                  {book.tags.map((tag) => (
+                    <a
+                      className="text-[#23BE0A] bg-[#23BE0A0D] p-1 rounded-md mr-3"
+                      key={tag.idx}
+                    >
+                      #{tag}
+                    </a>
+                  ))}
+                </p>
+
+                <p className="flex items-center gap-1">
+                  <CiCalendar></CiCalendar> Year of Publishing:{" "}
+                  {book.yearOfPublishing}
+                </p>
+              </div>
+              <div className="flex gap-5">
+                <p className="flex items-center gap-1">
+                  <FaUserFriends></FaUserFriends> Publisher: {book.publisher}
+                </p>
+                <p className="flex items-center">
+                  <MdOutlineContactPage></MdOutlineContactPage> Page
+                  {book.totalPages}
+                </p>
+              </div>
+
+              <hr />
+
+              <div className="flex gap-3 mt-3">
+                <p className="border p-1 rounded-full text-[#328EFF] bg-[#328EFF26]">
+                  Category: {book.category}
+                </p>
+                <p className="border p-1 rounded-full text-[#FFAC33] bg-[#FFAC3326]">
+                  Rating: {book.rating}
+                </p>
+                <button className=" border p-1 rounded-full text-white bg-[#23BE0A]">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -6,8 +6,11 @@ const ListedBooks = () => {
   return (
     <div>
       <div>
+        <div className="bg-[#1313130D] py-5 rounded-lg mb-3">
+          <h1 className="text-center text-2xl md:text-3xl font-bold">Books</h1>
+        </div>
         {/* Tabs */}
-        <div className="flex items-center -mx-4 overflow-x-auto overflow-y-hidden justify-center md:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800">
+        <div className="flex items-center overflow-x-auto overflow-y-hidden justify-center md:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800 mb-3">
           <Link
             to=""
             onClick={() => setTabIndex(0)}
